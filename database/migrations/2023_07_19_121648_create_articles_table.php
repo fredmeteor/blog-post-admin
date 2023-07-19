@@ -11,23 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tags', function (Blueprint $table) {
-            $table->id();
-            $table->string('tag');
-            $table->timestamps();
+        Schema::table('articles', function (Blueprint $table) {
+            //
         });
-    }
-
-    protected $fillable = [
-         'tag'
-    ];
-
-
-    public function articles(){
-
-
-
-        return $this->belongsToMany('App\Models\Article');
     }
 
     /**
@@ -35,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tags');
+        Schema::table('articles', function (Blueprint $table) {
+            //
+        });
     }
 };
